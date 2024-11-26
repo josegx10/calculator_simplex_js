@@ -85,3 +85,14 @@ body {
     text-decoration: none;
     padding: 2%;
 }
+
+.dialog{
+    position:fixed;
+    z-index: 1000;
+    top: 30px;
+    margin-left: 70%;
+    width: 25%;
+    color: white;
+    border-radius: 15px;
+    background-color: red;
+}

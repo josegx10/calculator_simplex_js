@@ -88,8 +88,8 @@ const printNode = (node) => console.log(node.value);
 // funcion para resolver la operación 
 
 function getResult() {
-    if(inputOperation.value === null) {
-        alert('ingresa una operación')
+    if(inputOperation.value === '') {
+        getDialog('Ingresa una operación');
         return ;
     }
     const error = postLinkedList();
@@ -113,7 +113,15 @@ function getDivide_Multiply(nodo) {
     }
     return true;
 }
-
+function getDialog(message){
+    const dialog = document.getElementById('dialog');
+    dialog.show(); // Mostrar el diálogo
+    dialog.textContent = message; // Cambiar el texto
+    
+    setTimeout(function() {
+        dialog.close();
+    }, 3000);
+}
 // función para obtener la operación dividida en la lista enlazada
 function postLinkedList() {
     const operation = inputOperation.value.trim();
@@ -129,11 +137,11 @@ function postLinkedList() {
                 list.append(char)
                 number = "";
             }else {
-                alert("estas intentando iniciar con un simbolo en vez de un numero o tienes dos simbolos pegados a la vez");
+                getDialog("Estas intentando iniciar con un simbolo en vez de un número o tienes dos simbolos pegados a la vez");
                 return false;
             }
         }else {
-            alert("estas intentando poner otro simbolo que no vale");
+            getDialog("Estas intentando poner otro simbolo que no vale");
             return false;
         }
         
@@ -141,7 +149,7 @@ function postLinkedList() {
     if(number.length != 0){
         list.append(number);
     }else {
-        alert("No hay un número al final");
+        getDialog("No hay un número al final");
         return false;
     }
     
@@ -166,11 +174,11 @@ function Calc() {
         }
         if(["+", "-", "*", "/"].includes( nodo.value)){
             if(nodo.next === null){
-                alert("le falta un número a la izquierda")
+                getDialog("Le falta un número a la izquierda")
                 return ;
             }
             if(nodo.previus === null){
-                alert("le falta un número a la derecha")
+                getDialog("Le falta un número a la derecha")
                 return ;
             }
             const num1 = Number.parseFloat(nodo.previus.value);
@@ -182,7 +190,7 @@ function Calc() {
             
             } else if("/".includes(nodo.value)){
                 if(num2 === 0){
-                    alert("No se puede dividir entre cero")
+                    getDialog("No se puede dividir entre cero")
                     return ;
                 }
                 result = num1/num2;
