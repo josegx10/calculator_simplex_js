@@ -1,16 +1,30 @@
+:root {
+    --background: #001c55;
+    --button: #0a2472;
+    --input: var(--button);
+    --calc : #00072d;
+    --letter: #a6e1fa;
+    --a: #0e6ba8;
+}
+* {
+    color: var(--letter);
+
+}
+
 body {
     padding: 0;
     margin: 0;
-    background-color:#02010d;
+    background-color: var(--background);
 }
 
 .calc {
     width: 30%;
     height: 60vh;
     margin: auto;
-    background-color:grey;
+    background-color: var(--calc);
     border-radius: 5%;
     margin-top: 5vh;
+    border: 1px solid var(--letter);
 }
 
 .inputOperation{
@@ -19,9 +33,11 @@ body {
     margin-right: 9%;
     margin-top: 5% ;
     height: 3vh;
-    border: 0;
+    border: 1px solid var(--letter);
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--input);
+    font-size: medium;
+
 }
 
 .inputResult {
@@ -30,6 +46,8 @@ body {
     float: right;
     border: 0;
     margin-right: 12% ;
+    background-color: var(--input);
+    border: 1px solid var(--letter);
     
 }
 
@@ -46,5 +64,24 @@ body {
     margin-left: 3%; 
     border-radius: 6px;
     border: 0;
+    background-color: var(--button);
+    font-size: larger;
+    border: 1px solid var(--letter);
 }
-
+.colors {
+    width: 80%;
+    margin: auto;
+    background-color: var(--calc);
+    height: 5vh;
+    border-radius: 20px;
+    padding-top: 1%;
+    margin-top: 5vh;
+    border: 1px solid var(--letter);
+}
+.colors a {
+    margin: 5%;
+    
+    font-size: larger;
+    text-decoration: none;
+    padding: 2%;
+}
