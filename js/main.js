@@ -173,8 +173,8 @@ function Calc() {
                 alert("le falta un número a la derecha")
                 return ;
             }
-            const num1 = Number.parseInt(nodo.previus.value);
-            const num2 = Number.parseInt(nodo.next.value);
+            const num1 = Number.parseFloat(nodo.previus.value);
+            const num2 = Number.parseFloat(nodo.next.value);
             let result = 0;
             if("*".includes(nodo.value)){
                 
